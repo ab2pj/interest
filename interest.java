@@ -1,7 +1,7 @@
 // create data entry window that will calculate missing values for interest rate calculations 
 
-import java.awt.*
-import java.awt.event.*
+import java.awt.*;
+import java.awt.event.*;
 
 public class Interest extends Frame {
   final int inc = 25;
@@ -19,7 +19,7 @@ public class Interest extends Frame {
     
     //Anonymous inner class to handle mouse click events
     addMouseListener(new MouseAdapter() {
-      public void MouseClicked(me) {
+      public void MouseClicked(MouseEvent me) {
         int w = (d.width + inc) > max ? min : (d.width + inc);
         int h = (d.height + inc) > max ? min : (d.height + inc);
         setSize(new Dimension (w,h));
@@ -35,7 +35,7 @@ public class Interest extends Frame {
     g.drawLine(i.left, d.height-i.bottom, d.width-i.right, i.top);
   }
   
-  public static void main(String[] args {
+  public static void main(String[] args) {
     Interest appwin = new Interest();
     appwin.setSize (new Dimension(200,200));
     appwin.setTitle ("Interest");
